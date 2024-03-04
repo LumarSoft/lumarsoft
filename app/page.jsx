@@ -2,6 +2,8 @@
 
 import { redirect } from "next/navigation";
 
-export function page() {
+async function page() {
   redirect(`/es`);
 }
+
+export default page;
