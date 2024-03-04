@@ -1,3 +1,4 @@
+
 import Navbar from "../components/navbar";
 import "./globals.css";
 import { GeistSans } from "geist/font/sans";
@@ -6,7 +7,6 @@ import Head from "next/head";
 
 <link rel="icon" href="/favicon.ico" sizes="any" />;
 
-
 export const metadata = {
   title: "LumarSoft",
   description:
@@ -14,6 +14,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
       <Head>
