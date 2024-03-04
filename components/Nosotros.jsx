@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react";
-import "./nosotros.css";
+import "./Nosotros.css";
 import { FaCheck } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
