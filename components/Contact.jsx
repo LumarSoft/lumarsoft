@@ -1,10 +1,11 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Contact = ({ lenguaje }) => {
   const refForm = useRef();
+  const [showSnackBar, setShowSnackBar] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,12 +15,26 @@ const Contact = ({ lenguaje }) => {
 
     emailjs
       .sendForm(serviceID, templateID, refForm.current, apikey)
-      .then((result) => console.log(result.text))
+      .then((result) => {
+        console.log(result.text);
+        setShowSnackBar(true);
+        refForm.current.reset();
+      })
       .catch((error) => console.error(error));
   };
 
+  useEffect(() => {
+    let timer;
+    if (showSnackBar) {
+      timer = setTimeout(() => {
+        setShowSnackBar(false);
+      }, 5000);
+    }
+    return () => clearTimeout(timer);
+  }, [showSnackBar]);
+
   return (
-    <div className=" w-full h-screen flex justify-center items-center">
+    <div className="w-full h-screen flex justify-center items-center">
       <section className="text-white body-font" id="contact">
         <div>
           <motion.div
@@ -105,6 +120,21 @@ const Contact = ({ lenguaje }) => {
               </div>
             </div>
           </motion.form>
+          {/* SnackBar */}
+          <AnimatePresence>
+            {showSnackBar && (
+              <motion.div
+                className="fixed top-0 right-0 bg-gray-800 text-white p-4 m-4 rounded"
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: 0.5 }}
+              >
+                {lenguaje.snackBarMessage}
+              </motion.div>
+            )}
+          </AnimatePresence>
+
         </div>
       </section>
     </div>
