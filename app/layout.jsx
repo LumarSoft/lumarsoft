@@ -10,7 +10,7 @@ import Head from "next/head";
 export const metadata = {
   title: "LumarSoft",
   description:
-    "Consultora de desarrollo de software comprometida con la excelencia y la satisfacción del cliente. Ofrecemos soluciones personalizadas para tus necesidades de desarrollo. Actua ahora. Crea el futuro",
+    "Lumarsoft es una consultora de desarrollo de software comprometida con la excelencia y la satisfacción del cliente. Ofrecemos soluciones personalizadas para tus necesidades de desarrollo. Actua ahora. Crea el futuro",
 };
 
 export default function RootLayout({ children }) {
