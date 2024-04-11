@@ -1,6 +1,11 @@
+import { LanguajeCardService } from "@/shared/types/language";
 import { Animation } from "../../../../../shared/Animation";
 
-export const CardService = ({ lenguaje }) => {
+export const CardService = ({
+  language,
+}: {
+  language: LanguajeCardService;
+}) => {
   return (
     <Animation
       style="flex flex-col gap-4 w-full border border-zinc-800 px-4 py-4 rounded-lg"
@@ -10,15 +15,15 @@ export const CardService = ({ lenguaje }) => {
       animationTransition={{ duration: 0.7, ease: "easeOut" }}
     >
       <span className="text-sky-300 bg-blue-950 px-4 py-1 rounded-lg text-center font-semibold text-lg">
-        {lenguaje.title}
+        {language.title}
       </span>
-      <p>{lenguaje.description}</p>
-      <TimeLine lenguaje={lenguaje} />
+      <p>{language.description}</p>
+      <TimeLine language={language} />
     </Animation>
   );
 };
 
-const TimeLine = ({ lenguaje }) => {
+const TimeLine = ({ language }: { language: LanguajeCardService }) => {
   return (
     <div className="relative  border-s border-sky-400">
       <ol>
@@ -27,17 +32,17 @@ const TimeLine = ({ lenguaje }) => {
           animationInitial={{ opacity: 0 }}
           animationWhileInView={{ opacity: 1 }}
           animationTransition={{ duration: 0.7, ease: "easeOut" }}
-          animationViewport={{ once: true }}
+          animationViewPort={{ once: true }}
         >
           <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 bg-sky-400 animate-pulse animate-duration-[900ms]"></div>
           <time className="mb-1 text-sm font-normal leading-none text-gray-400">
-            {lenguaje.step1Time}
+            {language.step1Time}
           </time>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            {lenguaje.step1}
+            {language.step1}
           </h3>
           <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-            {lenguaje.descriptionStep1}
+            {language.descriptionStep1}
           </p>
         </Animation>
         <Animation
@@ -45,17 +50,17 @@ const TimeLine = ({ lenguaje }) => {
           animationInitial={{ opacity: 0 }}
           animationWhileInView={{ opacity: 1 }}
           animationTransition={{ duration: 0.7, ease: "easeOut" }}
-          animationViewport={{ once: true }}
+          animationViewPort={{ once: true }}
         >
           <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5  bg-sky-400 animate-pulse animate-duration-[900ms]"></div>
           <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            {lenguaje.step2Time}
+            {language.step2Time}
           </time>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            {lenguaje.step2}
+            {language.step2}
           </h3>
           <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-            {lenguaje.descriptionStep2}
+            {language.descriptionStep2}
           </p>
         </Animation>
         <Animation
@@ -63,17 +68,17 @@ const TimeLine = ({ lenguaje }) => {
           animationInitial={{ opacity: 0 }}
           animationWhileInView={{ opacity: 1 }}
           animationTransition={{ duration: 0.7, ease: "easeOut" }}
-          animationViewport={{ once: true }}
+          animationViewPort={{ once: true }}
         >
           <div className="absolute w-3 h-3  rounded-full mt-1.5 -start-1.5 bg-sky-400 animate-pulse animate-duration-[900ms]"></div>
           <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            {lenguaje.step3Time}
+            {language.step3Time}
           </time>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            {lenguaje.step3}
+            {language.step3}
           </h3>
           <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-            {lenguaje.descriptionStep3}
+            {language.descriptionStep3}
           </p>
         </Animation>
         <Animation
@@ -81,17 +86,17 @@ const TimeLine = ({ lenguaje }) => {
           animationInitial={{ opacity: 0 }}
           animationWhileInView={{ opacity: 1 }}
           animationTransition={{ duration: 0.7, ease: "easeOut" }}
-          animationViewport={{ once: true }}
+          animationViewPort={{ once: true }}
         >
           <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 bg-sky-400 animate-pulse animate-duration-[900ms]"></div>
           <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            {lenguaje.step4Time}
+            {language.step4Time}
           </time>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-            {lenguaje.step4}
+            {language.step4}
           </h3>
           <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-            {lenguaje.descriptionStep4}
+            {language.descriptionStep4}
           </p>
         </Animation>
       </ol>

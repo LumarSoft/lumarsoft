@@ -25,7 +25,7 @@ export const WeDo = ({ language }: { language: LanguajeWeDo }) => {
 
       <div className="w-full flex gap-10 lgn:flex lgn:flex-col">
         {language.cardService.map((skill) => (
-          <CardService lenguaje={skill} key={skill.id} />
+          <CardService language={skill} key={skill.id} />
         ))}
       </div>
     </section>

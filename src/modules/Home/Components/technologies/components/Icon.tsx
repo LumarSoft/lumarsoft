@@ -2,7 +2,15 @@
 import React from "react";
 import { Tooltip } from "react-tooltip";
 import Image from "next/image";
-export const Icon = ({ name, image, url }) => {
+export const Icon = ({
+  name,
+  image,
+  url,
+}: {
+  name: string;
+  image: string;
+  url: string;
+}) => {
   return (
     <a
       href={url}

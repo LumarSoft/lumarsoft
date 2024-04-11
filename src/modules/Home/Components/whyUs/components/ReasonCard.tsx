@@ -1,6 +1,17 @@
 import React from "react";
 
-export const ReasonCard = ({ icon, title, description,styleIcon }) => {
+export const ReasonCard = ({
+  icon,
+  title,
+  description,
+  styleIcon,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  styleIcon: string;
+}) => {
+  console.log("icon", icon);
   return (
     <div className="max-w-[300px] mx-auto">
       <p className="text-base flex justify-center flex-col">
@@ -11,4 +22,3 @@ export const ReasonCard = ({ icon, title, description,styleIcon }) => {
     </div>
   );
 };
-
