@@ -4,28 +4,25 @@ import { WeDo } from "./Components/weDo/WeDo";
 import { WhyUs } from "./Components/whyUs/WhyUs";
 import { Technologies } from "./Components/technologies/Technologies";
 import { AboutUs } from "@/shared/components/aboutUs/AboutUs";
+import { Language } from "@/shared/types/language";
 import { Contact } from "@/shared/components/contact/Contact";
 
-export const HomeModule = ({ dictionary }) => {
+export const HomeModule = ({ dictionary }: { dictionary: Language }) => {
   return (
     <main className="text-white ">
       <Blur />
       <div className="px-20 lgn:px-10 smn:px-4 flex flex-col ">
-        <Hero lenguaje={dictionary.Hero} />
+        <Hero language={dictionary.Hero} />
 
-        <WeDo lenguaje={dictionary.SecondSkill} />
+        <WeDo language={dictionary.WeDo} />
 
-        <WhyUs lenguaje={dictionary.WhyChoose} />
+        <WhyUs language={dictionary.WhyUs} />
 
-        <Technologies lenguaje={dictionary.Technologies} />
+        <Technologies language={dictionary.Technologies} />
 
-        <AboutUs lenguaje={dictionary.About} />
+        <AboutUs language={dictionary.About} />
 
-        <Contact lenguaje={dictionary.Contact} />
-
-        <div className="flex justify-center items-center gap-4 mb-2 smn:text-sm smn:mb-0">
-          <span>{dictionary.Rights}</span>
-        </div>
+        <Contact lenguage={dictionary.Contact} />
       </div>
     </main>
   );

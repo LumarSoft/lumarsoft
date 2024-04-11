@@ -12,7 +12,7 @@
     "subtitle": "Innovation that inspires, solutions that impact.",
     "button": "Contact Us"
   },
-  "SecondSkill": {
+  "WeDo": {
     "title1": "Empowering your company",
     "title2": "towards digital success",
     "cardService": [
@@ -32,8 +32,8 @@
         "step4Time": "Step 4",
         "step4": "Implementation",
         "descriptionStep4": "We implement in a production environment, ready for launch."
-        },
-        {
+      },
+      {
         "id": 2,
         "title": "Web Development and E-commerce Management",
         "description": "Design and development of web pages, along with management, maintenance, and support of online stores and sales channels, using modern and cutting-edge technologies.",
@@ -49,8 +49,8 @@
         "step4Time": "Step 4",
         "step4": "Implementation of the Website",
         "descriptionStep4": "Loading and hosting on a server to be available on the Internet, accessible anytime, anywhere."
-        },
-        {
+      },
+      {
         "id": 3,
         "title": "System Integration and Migration Services",
         "description": "Integration and migration of existing systems to new platforms or technologies, optimizing their processes and maximizing the value of their investments.",
@@ -66,10 +66,10 @@
         "step4Time": "Step 4",
         "step4": "Data Migration Between Platforms",
         "descriptionStep4": "Data transfer ensuring the integrity and consistency of information."
-        }
+      }
     ]
   },
-  "WhyChoose": {
+  "WhyUs": {
     "title": "Why us?",
     "description": "At LumarSoft, we know that choosing the right partner for your software development needs is crucial. Our commitment to excellence and customer satisfaction is unwavering. Here are just a few reasons to choose us:",
     "reasonCard": [
@@ -130,5 +130,4 @@
       "button": "Send"
     }
   }
-  
 }

@@ -7,8 +7,9 @@ import { FaHandshakeSimple } from "react-icons/fa6";
 import { FaChartLine } from "react-icons/fa";
 import { FaHandHoldingHeart } from "react-icons/fa";
 import { Animation } from "@/shared/Animation";
+import { LanguajeWhyUs } from "@/shared/types/language";
 
-export const WhyUs = ({ lenguaje }) => {
+export const WhyUs = ({ language }: { language: LanguajeWhyUs }) => {
   const icons = [
     SlEnergy,
     FaUserCheck,
@@ -36,9 +37,9 @@ export const WhyUs = ({ lenguaje }) => {
         animationTransition={{ duration: 0.7, ease: "easeOut" }}
       >
         <h5 className="text-5xl font-semibold mb-6 smn:text-3xl text-sky-500 bg-gray-800 rounded-lg  inline-block px-4 py-1">
-          {lenguaje.title}
+          {language.title}
         </h5>
-        <p className="mb-8 smn:text-sm smn:hidden">{lenguaje.description}</p>
+        <p className="mb-8 smn:text-sm smn:hidden">{language.description}</p>
       </Animation>
 
       <Animation
@@ -48,7 +49,7 @@ export const WhyUs = ({ lenguaje }) => {
         animationViewPort={{ once: true, offset: 0.5 }}
         animationTransition={{ duration: 0.7, ease: "easeOut" }}
       >
-        {lenguaje.reasonCard.map((card, index) => (
+        {language.reasonCard.map((card, index) => (
           <Animation
             key={index}
             animationInitial={{ opacity: 0, y: 30 }}

@@ -1,6 +1,10 @@
-import { HomeModule } from "@/src/modules/Home/index";
+import { HomeModule } from "@/modules/Home";
 
-export default async function Page({ params: { lang } }) {
+export default async function Page({
+  params: { lang },
+}: {
+  params: { lang: string };
+}) {
   const dictionary = await import(`./../dictionary/${lang}.json`).then(
     (res) => res.default
   );

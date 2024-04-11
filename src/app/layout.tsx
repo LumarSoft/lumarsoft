@@ -1,5 +1,5 @@
-import { Navbar } from "@/shared/components/navbar/Navbar";
 import "./globals.css";
+import { Navbar } from "@/shared/components/navbar/Navbar";
 import { GeistSans } from "geist/font/sans";
 import { WspBtn } from "@/shared/components/wspBtn/WspBtn";
 
@@ -32,7 +32,11 @@ export const metadata = {
   robots: "index, follow",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body

@@ -1,9 +1,14 @@
 import { stackTechnologies } from "@/shared/lib/techStack";
 import React from "react";
-import { Icon } from "./components/icon";
+import { Icon } from "./components/Icon";
 import { Animation } from "@/shared/Animation";
+import { LanguajeTechnologies } from "@/shared/types/language";
 
-export const Technologies = ({ lenguaje }) => {
+export const Technologies = ({
+  language,
+}: {
+  language: LanguajeTechnologies;
+}) => {
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -43,11 +48,11 @@ export const Technologies = ({ lenguaje }) => {
       >
         <span className="flex justify-center">
           <h3 className="text-5xl font-semibold text-center mt-16 lgn:text-5xl text-sky-500 bg-gray-800 rounded-lg  inline-block px-4 py-1">
-            {lenguaje.title}
+            {language.title}
           </h3>
         </span>
         <p className="text-center text-xl mt-4 lgn:text-base text-gray-400">
-          {lenguaje.description}
+          {language.description}
         </p>
       </Animation>
 

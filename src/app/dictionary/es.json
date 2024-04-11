@@ -12,7 +12,7 @@
     "subtitle": "Innovación que inspira, soluciones que impactan.",
     "button": "Contactar"
   },
-  "SecondSkill": {
+  "WeDo": {
     "title1": "Potenciando tu empresa",
     "title2": "hacia el éxito digital",
     "cardService": [
@@ -69,7 +69,7 @@
       }
     ]
   },
-  "WhyChoose": {
+  "WhyUs": {
     "title": "¿Por qué elegirnos?",
     "description": "En LumarSoft, sabemos que elegir el socio adecuado para tus necesidades de desarrollo de software es crucial. Nuestro compromiso con la excelencia y la satisfacción del cliente es inquebrantable. Aquí hay algunas razones para elegirnos:",
     "reasonCard": [

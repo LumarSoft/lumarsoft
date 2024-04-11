@@ -2,6 +2,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+interface AnimationProps {
+  children: React.ReactNode;
+  style?: string;
+  animationInitial?: any;
+  animationAnimate?: any;
+  animationTransition?: any;
+  animationWhileInView?: any;
+  animationViewPort?: any;
+  animationVariants?: any;
+}
+
 export const Animation = ({
   children,
   style,
@@ -10,8 +21,8 @@ export const Animation = ({
   animationTransition,
   animationWhileInView,
   animationViewPort,
-  animationVariants
-}) => {
+  animationVariants,
+}: AnimationProps) => {
   return (
     <motion.div
       className={style}

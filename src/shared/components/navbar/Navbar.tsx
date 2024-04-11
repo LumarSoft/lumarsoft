@@ -7,7 +7,7 @@ import "./navbar.css";
 import { useParams } from "next/navigation";
 import spain from "/public/Icons/spain.png";
 import english from "/public/Icons/estadosUnidos.png";
-import { Animation } from "../../Animation";
+import { Animation } from "@/shared/Animation";
 
 export const Navbar = () => {
   const params = useParams();
@@ -23,7 +23,6 @@ export const Navbar = () => {
         damping: 20,
         delay: 0.1,
       }}
-      animationTag="nav"
     >
       <div className="flex items-center gap-5 justify-center">
         <a href="/">

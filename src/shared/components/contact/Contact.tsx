@@ -2,29 +2,34 @@
 import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
+import { LanguajeContact } from "@/shared/types/language";
 
-export const Contact = ({ lenguaje }) => {
+export const Contact = ({ lenguage }: { lenguage: LanguajeContact }) => {
   const refForm = useRef();
   const [showSnackBar, setShowSnackBar] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const serviceID = "service_3isglca";
     const templateID = "template_zna8w2m";
     const apikey = "9WDePDRC2s6hN1xRx";
 
-    emailjs
-      .sendForm(serviceID, templateID, refForm.current, apikey)
-      .then((result) => {
-        console.log(result.text);
-        setShowSnackBar(true);
-        refForm.current.reset();
-      })
-      .catch((error) => console.error(error));
+    if (refForm.current) {
+      emailjs
+        .sendForm(serviceID, templateID, refForm.current, apikey)
+        .then((result) => {
+          console.log(result.text);
+          setShowSnackBar(true);
+          if (refForm.current) {
+            (refForm.current as HTMLFormElement).reset();
+          }
+        })
+        .catch((error) => console.error(error));
+    }
   };
 
   useEffect(() => {
-    let timer;
+    let timer: NodeJS.Timeout;
     if (showSnackBar) {
       timer = setTimeout(() => {
         setShowSnackBar(false);
@@ -40,43 +45,42 @@ export const Contact = ({ lenguaje }) => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, offset: 0.5 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <span className="flex justify-center">
               <h2 className="text-5xl font-semibold mb-4 text-sky-500 bg-gray-800 rounded-lg inline-block px-4 py-1">
-                {lenguaje.title}
+                {lenguage.title}
               </h2>
             </span>
 
             <div className="flex flex-col text-center mb-12">
               <p className="text-base text-gray-400 text-wrap">
-                {lenguaje.subtitle}
+                {lenguage.subtitle}
               </p>
             </div>
           </motion.div>
 
           <motion.form
-            ref={refForm}
             onSubmit={handleSubmit}
             className="max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, offset: 0.5 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <div className="flex flex-wrap">
               <div className="p-2 w-1/2">
                 <div>
                   <label htmlFor="name" className="text-sm text-white">
-                    {lenguaje.form.labelName}
+                    {lenguage.form.labelName}
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     className="w-full bg-black rounded border border-zinc-700 text-base outline-none text-white py-1 px-3 leading-8 focus:border-sky-500 transition-colors duration-200 ease-in-out  smn:h-10 mdn:h-12 2xln:h-14 lgn:h-16 smn:text-sm"
-                    placeholder={lenguaje.form.placeholderName}
+                    placeholder={lenguage.form.placeholderName}
                     required
                   />
                 </div>
@@ -84,14 +88,14 @@ export const Contact = ({ lenguaje }) => {
               <div className="p-2 w-1/2">
                 <div>
                   <label htmlFor="email" className="text-sm text-white">
-                    {lenguaje.form.labelEmail}
+                    {lenguage.form.labelEmail}
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     className="w-full bg-black rounded border border-zinc-700 text-base outline-none text-white py-1 px-3 leading-8 focus:border-sky-500 transition-colors duration-200 ease-in-out smn:h-10 mdn:h-12 2xln:h-14 lgn:h-16 smn:text-sm"
-                    placeholder={lenguaje.form.placeholderEmail}
+                    placeholder={lenguage.form.placeholderEmail}
                     required
                   />
                 </div>
@@ -99,13 +103,13 @@ export const Contact = ({ lenguaje }) => {
               <div className="p-2 w-full">
                 <div>
                   <label htmlFor="message" className="text-sm text-white">
-                    {lenguaje.form.labelMessage}
+                    {lenguage.form.labelMessage}
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     className="resize-none w-full bg-black rounded border border-zinc-700 h-32 text-base outline-none text-white px-4 py-2 leading-8 focus:border-sky-500 transition-colors duration-200 ease-in-out smn:h-40 mdn:h-48 2xln:h-56 lgn:h-64"
-                    placeholder={lenguaje.form.placeholderMessage}
+                    placeholder={lenguage.form.placeholderMessage}
                     required
                   ></textarea>
                 </div>
@@ -115,12 +119,12 @@ export const Contact = ({ lenguaje }) => {
                   className="flex mx-auto text-white font-medium bg-sky-500 border-0 py-2 px-20 focus:outline-none hover:bg-sky-600 ease-in-out duration-200 rounded text-lg"
                   type="submit"
                 >
-                  {lenguaje.form.button}
+                  {lenguage.form.button}
                 </button>
               </div>
             </div>
           </motion.form>
-          {/* SnackBar */}
+          
           <AnimatePresence>
             {showSnackBar && (
               <motion.div
@@ -130,7 +134,7 @@ export const Contact = ({ lenguaje }) => {
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ duration: 0.5 }}
               >
-                {lenguaje.snackBarMessage}
+                {lenguage.snackBarMessage}
               </motion.div>
             )}
           </AnimatePresence>
