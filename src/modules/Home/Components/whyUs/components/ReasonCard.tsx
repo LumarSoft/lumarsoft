@@ -11,7 +11,6 @@ export const ReasonCard = ({
   description: string;
   styleIcon: string;
 }) => {
-  console.log("icon", icon);
   return (
     <div className="max-w-[300px] mx-auto">
       <p className="text-base flex justify-center flex-col">

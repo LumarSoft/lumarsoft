@@ -2,6 +2,7 @@ import "./globals.css";
 import { Navbar } from "@/shared/components/navbar/Navbar";
 import { GeistSans } from "geist/font/sans";
 import { WspBtn } from "@/shared/components/wspBtn/WspBtn";
+import { cn } from "@/lib/utils";
 
 <link rel="icon" href="/favicon.ico" sizes="any" />;
 
@@ -40,7 +41,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${GeistSans.className} text-white bg-black overflow-x-hidden `}
+        className={cn(
+          `${GeistSans.className} text-white overflow-x-hidden min-h-screen bg-black font-sans antialiased dark`
+        )}
       >
         <Navbar />
         {children}
