@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Contact = ({ lenguaje }) => {
+export const Contact = ({ lenguaje }) => {
   const refForm = useRef();
   const [showSnackBar, setShowSnackBar] = useState(false);
 
@@ -134,11 +134,8 @@ const Contact = ({ lenguaje }) => {
               </motion.div>
             )}
           </AnimatePresence>
-
         </div>
       </section>
     </div>
   );
 };
-
-export default Contact;

@@ -2,8 +2,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import whatsApp from "@/public/Icons/whatsapp.png";
-const WspBtn = () => {
+import whatsApp from "/public/Icons/whatsapp.png";
+
+export const WspBtn = () => {
   return (
     <motion.div
       className="w-full flex absolute px-16 py-2 items-center gap-4 font-semibold justify-between lgn:px-10  smn:px-4 z-50 "
@@ -16,10 +17,14 @@ const WspBtn = () => {
         rel="noopener noreferrer"
         className="fixed bottom-10 right-10 z-50 smn:right-3"
       >
-        <Image src={whatsApp} alt="WhatsApp Logo" width={60} height={60}  className="smn:w-14 smn:h-14"/>
+        <Image
+          src={whatsApp}
+          alt="WhatsApp Logo"
+          width={60}
+          height={60}
+          className="smn:w-14 smn:h-14"
+        />
       </a>
     </motion.div>
   );
 };
-
-export default WspBtn;

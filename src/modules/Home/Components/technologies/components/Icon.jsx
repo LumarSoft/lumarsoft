@@ -2,7 +2,7 @@
 import React from "react";
 import { Tooltip } from "react-tooltip";
 import Image from "next/image";
-export default function Icon({ name, image, url }) {
+export const Icon = ({ name, image, url }) => {
   return (
     <a
       href={url}
@@ -22,4 +22,4 @@ export default function Icon({ name, image, url }) {
       <Tooltip id="my-tooltip" />
     </a>
   );
-}
+};

@@ -1,15 +1,15 @@
 "use client";
 import Image from "next/image";
-import logo from "../public/Icons/Lumar.png";
-import linkedin from "../public/Icons/linkedin.png";
-import github from "../public/Icons/github.png";
+import logo from "/public/Icons/Lumar.png";
+import linkedin from "/public/Icons/linkedin.png";
+import github from "/public/Icons/github.png";
 import "./navbar.css";
 import { useParams } from "next/navigation";
-import spain from "../public/Icons/spain.png";
-import english from "../public/Icons/estadosUnidos.png";
-import { Animation } from "./animation";
+import spain from "/public/Icons/spain.png";
+import english from "/public/Icons/estadosUnidos.png";
+import { Animation } from "../../Animation";
 
-function Navbar() {
+export const Navbar = () => {
   const params = useParams();
 
   return (
@@ -89,6 +89,4 @@ function Navbar() {
       </div>
     </Animation>
   );
-}
-
-export default Navbar;
+};

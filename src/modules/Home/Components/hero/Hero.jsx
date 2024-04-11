@@ -1,8 +1,8 @@
 "use client";
 import Typewriter from "typewriter-effect";
-import { Animation } from "./animation";
+import { Animation } from "@/shared/Animation";
 
-function Hero({ lenguaje }) {
+export const Hero = ({ lenguaje }) => {
   const goContact = () => {
     const contact = document.getElementById("contact");
     contact.scrollIntoView({ behavior: "smooth" });
@@ -51,6 +51,4 @@ function Hero({ lenguaje }) {
       </Animation>
     </header>
   );
-}
-
-export default Hero;
+};

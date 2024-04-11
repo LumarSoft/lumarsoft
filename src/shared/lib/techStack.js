@@ -1,6 +1,8 @@
-import Nextjs from "../public/Icons/nextjs.svg";
-import expressIcon from "../public/Icons/expressjs.svg";
-import wordsPress from "../public/Icons/Wordpress_Blue_logo.png";
+import Nextjs from "/public/Icons/nextjs.svg";
+import expressIcon from "/public/Icons/expressjs.svg";
+import wordsPress from "/public/Icons/Wordpress_Blue_logo.png";
+
+
 export const stackTechnologies = [
   {
     id: 1,

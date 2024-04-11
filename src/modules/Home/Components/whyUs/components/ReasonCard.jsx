@@ -1,6 +1,6 @@
 import React from "react";
 
-const WhyUsObject = ({ icon, title, description,styleIcon }) => {
+export const ReasonCard = ({ icon, title, description,styleIcon }) => {
   return (
     <div className="max-w-[300px] mx-auto">
       <p className="text-base flex justify-center flex-col">
@@ -12,4 +12,3 @@ const WhyUsObject = ({ icon, title, description,styleIcon }) => {
   );
 };
 
-export default WhyUsObject;

@@ -1,6 +1,6 @@
-import { Animation } from "./animation";
+import { Animation } from "../../../../../shared/Animation";
 
-const CardService = ({ lenguaje }) => {
+export const CardService = ({ lenguaje }) => {
   return (
     <Animation
       style="flex flex-col gap-4 w-full border border-zinc-800 px-4 py-4 rounded-lg"
@@ -17,8 +17,6 @@ const CardService = ({ lenguaje }) => {
     </Animation>
   );
 };
-
-export default CardService;
 
 const TimeLine = ({ lenguaje }) => {
   return (

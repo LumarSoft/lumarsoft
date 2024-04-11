@@ -1,7 +1,7 @@
-import Navbar from "../components/navbar";
+import { Navbar } from "@/shared/components/navbar/Navbar";
 import "./globals.css";
 import { GeistSans } from "geist/font/sans";
-import WspBtn from "@/components/WspBtn";
+import { WspBtn } from "@/shared/components/wspBtn/WspBtn";
 
 <link rel="icon" href="/favicon.ico" sizes="any" />;
 
@@ -29,7 +29,6 @@ export const metadata = {
     "Desarrollo de Software Empresarial",
   ],
   author: "Lumarsoft",
-  viewport: "width=device-width, initial-scale=1.0",
   robots: "index, follow",
 };
 

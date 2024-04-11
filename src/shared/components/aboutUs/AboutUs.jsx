@@ -1,9 +1,9 @@
 import React from "react";
 import "./nosotros.css";
 import { FaCheck } from "react-icons/fa6";
-import { Animation } from "./animation";
+import { Animation } from "@/shared/Animation";
 
-const Nosotros = ({ lenguaje }) => {
+export const AboutUs = ({ lenguaje }) => {
   return (
     <Animation
       animationInitial={{ opacity: 0, y: 30 }}
@@ -56,5 +56,3 @@ const Nosotros = ({ lenguaje }) => {
     </Animation>
   );
 };
-
-export default Nosotros;

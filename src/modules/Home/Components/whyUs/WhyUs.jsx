@@ -1,14 +1,14 @@
 import React from "react";
-import ReasonCard from "./WhyUsObject";
+import { ReasonCard } from "./components/ReasonCard";
 import { SlEnergy } from "react-icons/sl";
 import { FaUserCheck } from "react-icons/fa";
 import { FcProcess } from "react-icons/fc";
 import { FaHandshakeSimple } from "react-icons/fa6";
 import { FaChartLine } from "react-icons/fa";
 import { FaHandHoldingHeart } from "react-icons/fa";
-import { Animation } from "./animation";
+import { Animation } from "@/shared/Animation";
 
-const WhyUs = ({ lenguaje }) => {
+export const WhyUs = ({ lenguaje }) => {
   const icons = [
     SlEnergy,
     FaUserCheck,
@@ -68,5 +68,3 @@ const WhyUs = ({ lenguaje }) => {
     </div>
   );
 };
-
-export default WhyUs;

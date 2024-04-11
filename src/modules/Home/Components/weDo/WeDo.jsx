@@ -1,8 +1,8 @@
 import React from "react";
-import CardService from "./cardService";
-import { Animation } from "./animation";
+import { Animation } from "@/shared/Animation";
+import { CardService } from "./components/cardService";
 
-const SecondSkills = ({ lenguaje }) => {
+export const WeDo = ({ lenguaje }) => {
   return (
     <section
       className="w-full min-h-screen h-full flex flex-col items-center justify-center gap-20 2xln:pt-20 pt-10"
@@ -30,5 +30,3 @@ const SecondSkills = ({ lenguaje }) => {
     </section>
   );
 };
-
-export default SecondSkills;

@@ -1,9 +1,9 @@
-import { stackTechnologies } from "@/lib/techStack";
+import { stackTechnologies } from "@/shared/lib/techStack";
 import React from "react";
-import Icon from "./icon";
-import { Animation } from "./animation";
+import { Icon } from "./components/icon";
+import { Animation } from "@/shared/Animation";
 
-const Technologies = ({ lenguaje }) => {
+export const Technologies = ({ lenguaje }) => {
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -77,5 +77,3 @@ const Technologies = ({ lenguaje }) => {
     </section>
   );
 };
-
-export default Technologies;
